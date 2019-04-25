@@ -5,6 +5,9 @@
   "repository": "https://github.com/node-react-native/01-node-simple-routes.git",
   "author": "Carlos Mestre <carlos.mestre@gamersclub.com.br>",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
   "dependencies": {
     "express": "^4.16.4",
     "nunjucks": "^3.2.0"
