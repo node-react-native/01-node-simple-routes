@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false }))
 app.set('view engine', 'njk')
 
 app.get('/', (req, res) => {
-  res.send('hello')
+  res.render('form')
 })
 
 // TODO: / : render a form page with the age field
