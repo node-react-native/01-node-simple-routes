@@ -1,0 +1,27 @@
+{
+  "git.autofetch": true,
+  "gitlens.mode.active": "review",
+  "editor.renderWhitespace": "boundary",
+  "workbench.iconTheme": "vscode-icons",
+  "editor.lineHeight": 22,
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "Dracula",
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 4,
+  "editor.renderLineHighlight": "gutter",
+  "terminal.integrated.fontSize": 14,
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "breadcrumbs.enabled": true,
+  "editor.parameterHints.enabled": true,
+  "prettier.eslintIntegration": true,
+  "eslint.packageManager": "yarn"
+}
