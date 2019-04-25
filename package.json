@@ -1,0 +1,8 @@
+{
+  "name": "01-node-simple-routes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/node-react-native/01-node-simple-routes.git",
+  "author": "Carlos Mestre <carlos.mestre@gamersclub.com.br>",
+  "license": "MIT"
+}
