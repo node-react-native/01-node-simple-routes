@@ -26,7 +26,12 @@ app.post('/check', (req, res) => {
   }
 })
 
-// TODO: /major : render a page with text "Greather than 18: age"
-// TODO: /minor : render a page with text "Less than 18: age"
+app.get('/major', (req, res) => {
+  res.render('major', { age: req.query.age })
+})
+
+app.get('/minor', (req, res) => {
+  res.render('minor', { age: req.query.age })
+})
 
 app.listen(3000)
