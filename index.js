@@ -18,8 +18,14 @@ app.get('/', (req, res) => {
   res.render('form')
 })
 
-// TODO: / : render a form page with the age field
-// TODO: /check : post called by form that check age - redirect to /major or /minor (age is send as a qyery param in redirect)
+app.post('/check', (req, res) => {
+  if (req.body.age >= 18) {
+    res.redirect('/major?age=' + req.body.age)
+  } else {
+    res.redirect('/minor?age=' + req.body.age)
+  }
+})
+
 // TODO: /major : render a page with text "Greather than 18: age"
 // TODO: /minor : render a page with text "Less than 18: age"
 
