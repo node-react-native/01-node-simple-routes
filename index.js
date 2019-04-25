@@ -2,6 +2,8 @@ const express = require('express')
 const nunjucks = require('nunjucks')
 
 const app = express()
+app.use(express.urlencoded({ extended: false })) // enable form inputs by post
+app.set('view engine', 'njk')
 
 nunjucks.configure('views', {
   autoescape: true,
@@ -9,10 +11,22 @@ nunjucks.configure('views', {
   watch: true
 })
 
-// enable form inputs by post
-app.use(express.urlencoded({ extended: false }))
+const logMiddleware = (req, res, next) => {
+  console.log(
+    `HOST: ${req.headers.host} | URL: ${req.url} | METHOD: ${req.method}`
+  )
+  return next()
+}
 
-app.set('view engine', 'njk')
+const validationMiddleware = (req, res, next) => {
+  if (req.query.age === undefined || req.query.age === null || !req.query.age) {
+    res.redirect('/')
+  } else {
+    return next()
+  }
+}
+
+app.use(logMiddleware)
 
 app.get('/', (req, res) => {
   res.render('form')
@@ -26,11 +40,11 @@ app.post('/check', (req, res) => {
   }
 })
 
-app.get('/major', (req, res) => {
+app.get('/major', validationMiddleware, (req, res) => {
   res.render('major', { age: req.query.age })
 })
 
-app.get('/minor', (req, res) => {
+app.get('/minor', validationMiddleware, (req, res) => {
   res.render('minor', { age: req.query.age })
 })
 
